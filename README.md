@@ -13,8 +13,6 @@ Esta guía será una pequeña actualización de la antigua [Guía NaiProxy](http
 
 En términos simples, un contrato actualizable es aquel que le permite cambiar el código/lógica subyacente de su contrato inteligente, sin alterar necesariamente el punto de entrada (dirección del contrato) de su dApp. Esto se hace separando sus contratos en un Proxy y una implementación. El Proxy sirve como punto de entrada y también contiene el almacenamiento del contrato, mientras que la Implementación contiene el código/lógica de su dApp. 
 
-**Para una inmersión más profunda, consulte este artículo de [David Baretto aquí](https://medium.com/starknet-edu/creating-upgradable-smart-contracts-on-starknet-12b7d9bd60c7)**
-
 Gracias al equipo de Openzeppelin, ya tenemos una buena plantilla a seguir. Primero, necesitamos copiar el [contrato de proxy](https://github.com/OpenZeppelin/cairo-contracts/blob/main/src/openzeppelin/upgrades/presets/Proxy.cairo), en nuestro repositorio. Este contrato de proxy contiene algunas funciones importantes que debemos comprender:
 
 - El `constructor` que toma 4 parámetros: `implementation_hash` (que es el hash de clase de nuestro contrato de implementación), `selector` que es el nombre del selector de nuestra función inicializadora (1295919550572838631247819983596733806859788957403169325509326258146877103642), `datacall_len ` (argumentos del constructor del contrato de implementación) que es la longitud de nuestra llamada y `calldata` que son los argumentos del constructor del contrato de implementación. El constructor establece el hash de implementación e inicializa el contrato de implementación.
@@ -29,6 +27,10 @@ Tenga en cuenta que el contrato de implementación nunca debe:
 
 1. Ser desplegado como un contrato regular. En su lugar, se debe declarar el contrato de implementación (lo que crea una clase declarada que contiene su hash y abi).
 2. Establecer su estado inicial con un constructor tradicional (decorado con @constructor). En su lugar, utilice un método de inicialización que invoque al constructor Proxy.
+
+---
+
+**Para una inmersión más profunda, consulte este artículo de [David Baretto aquí](https://medium.com/starknet-edu/creating-upgradable-smart-contracts-on-starknet-12b7d9bd60c7)**
 
 ---
 
