@@ -1,0 +1,10 @@
+[project]
+protostar-version = "0.9.0"
+lib-path = "lib"
+
+[contracts]
+NaiTokenV2 = ["src/NaiTokenV2.cairo"]
+
+[profile.testnet.project]
+network="testnet"
+account-address="0x03F878C94De81906ba1A016aB0E228D361753536681a776ddA29674FfeBB3CB0"
