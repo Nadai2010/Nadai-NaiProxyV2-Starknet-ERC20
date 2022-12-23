@@ -113,6 +113,7 @@ protostar -p testnet deploy 0x00eafb0413e759430def79539db681f8a4eb98cf4196fe4570
 Si todo ha ido bien nuestro contrato de Proxy con nuestro Token **NaiV1** ha sido desplegado, revise la siguiente foto y podra comprobar que aún no tenemos los métodos de `burn` que añadiremos a continuación, iremos al [upgrade](https://testnet.starkscan.co/contract/0x06295ee7376800e4d929bf93639d4c65156f8666f2586084c4ad80a2a7addf50#write-contract) y vamos a pasar **NaiV2** (su Class Hash que antes declaramos)
 
 ![Graph](/im%C3%A1genes/v1.png)
+
 ![Graph](/im%C3%A1genes/upgra.png)
 
 * [Hash Upgrade](https://testnet.starkscan.co/tx/0x4be535bfc0c89a4f4993217ba80fa03228de563c4cc5eb376527ba0f13dfdfb)
