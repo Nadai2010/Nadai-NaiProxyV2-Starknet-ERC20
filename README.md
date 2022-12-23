@@ -1,6 +1,6 @@
 <div align="center">
-    <img src="./Imagenes/Starknet.png" style="width: 300px">
-    <h1>Nadai Token NaiProxy ERC20</h1>
+    <img src="./imágenes/Starknet.png" style="width: 300px">
+    <h1>Nadai Token NaiProxy V2 ERC20</h1>
 
 [![StarkWare](https://img.shields.io/badge/powered_by-StarkWare-navy?style=for-the-badge&flat&logo=Starkware)](https://starkware.co/)
 [![Cairo](https://img.shields.io/badge/-%F0%9F%90%AB%20%20Cairo-red?style=for-the-badge&flat&logo=Cairo)](https://www.cairo-lang.org/)
@@ -38,6 +38,12 @@ Debemos instalar las librerias de OpenZeppelin usando el comando
 
 ```bash
 gh repo clone OpenZeppelin/cairo-contracts
+```
+
+También podrá clonar esta repo con todas los ajustes
+
+```bash
+gh repo clone Nadai2010/Nadai-NaiProxyV2-Starknet-ERC20
 ```
 
 ### Ajustes Account
