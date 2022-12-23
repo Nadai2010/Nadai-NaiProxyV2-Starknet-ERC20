@@ -96,12 +96,10 @@ Revisar que la cuenta esté exportada y vamos a pasar los 3 comandos para el dec
 * [Class Hash NaiTokenV1](https://testnet.starkscan.co/class/0x0459d37251c6f901a470d5e68a9ab6db594f79aaed49553975e132f56d2107b0)
 * [Class Hash NaiTokenV2](https://testnet.starkscan.co/class/0x07df12f46fee13fa7279754d62ae8cf4ffc224db70bb5cd90143659ffe9d7ba7)
 
-![Graph](/im%C3%A1genes/build.png)
-![Graph](/im%C3%A1genes/buildv1.png)
-![Graph](/im%C3%A1genes/buildv2.png)
+![Graph](/im%C3%A1genes/declare.png)
 
 
-Como vemos por ahora todos deben de coincidir con los iniciales. Ahora haremos el `deploy` del [Proxy](/src/Proxy.cairo) usando protostar, auqnue también podriamos usar el [UDC] por comodidad. Para ello debemos de pasar al `constructor` que toma 4 parámetros, la `implementation_hash` (que es el hash de clase de nuestro contrato de implementación), `selector` que es el nombre del selector de nuestra función inicializadora (1295919550572838631247819983596733806859788957403169325509326258146877103642), `datacall_len ` (argumentos del constructor del contrato de implementación) que es la longitud de nuestra llamada y `calldata` que son los argumentos del constructor del contrato de implementación. El constructor establece el hash de implementación e inicializa el contrato de implementación. En nuestro sólo necesitamos ajustar la dirreción de `ArgentX` para este deploy.
+Como vemos por ahora todos deben de coincidir con los iniciales. Ahora haremos el `deploy` del [Proxy](/src/Proxy.cairo) usando protostar, auqnue también podriamos usar el [UDC](https://testnet.starkscan.co/contract/0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf#write-contract) por comodidad. Para ello debemos de pasar al `constructor` que toma 4 parámetros, la `implementation_hash` (que es el hash de clase de nuestro contrato de implementación), `selector` que es el nombre del selector de nuestra función inicializadora (1295919550572838631247819983596733806859788957403169325509326258146877103642), `datacall_len ` (argumentos del constructor del contrato de implementación) que es la longitud de nuestra llamada y `calldata` que son los argumentos del constructor del contrato de implementación. El constructor establece el hash de implementación e inicializa el contrato de implementación. En nuestro sólo necesitamos ajustar la dirreción de `ArgentX` para este deploy.
 
 ```bash
 protostar -p testnet deploy 0x00eafb0413e759430def79539db681f8a4eb98cf4196fe457077d694c6aeeb82 --max-fee auto -i 0x0459d37251c6f901a470d5e68a9ab6db594f79aaed49553975e132f56d2107b0 0x2dd76e7ad84dbed81c314ffe5e7a7cacfb8f4836f01af4e913f275f89a3de1a 1 0x03F878C94De81906ba1A016aB0E228D361753536681a776ddA29674FfeBB3CB0
