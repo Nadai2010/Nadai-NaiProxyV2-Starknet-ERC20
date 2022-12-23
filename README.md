@@ -11,7 +11,9 @@
 
 Esta guía será una pequeña actualización de la antigua [Guía NaiProxy](https://github.com/Nadai2010/Nadai-NaiProxy-Starknet-ERC20) a NaiProxy V2, además de como aprender actualizar el contrato una vez llege el momento con Cairo 1.0, es necesario comprender cómo funcionan los contratos actualizables para poder migrar con éxito los contratos existentes a Cairo v1.0. En esta sección, aprenderemos cómo crear contratos actualizables mediante la codificación de un token ERC20 actualizable **NAI** [NaiTokenV1](/src/NaiTokenV1.cairo). Empezaremos desde 0, primero haremos el deploy del contrato [Proxy.cairo](/src/Proxy.cairo) con una implementación de nuestro Token ERC20 **NAI**, al que luego actiualizaremos a la versión [NaiTokenV2](/src/NaiTokenV2.cairo) con un nuevo método para la quema `burn`.
 
-En términos simples, un contrato actualizable es aquel que le permite cambiar el código/lógica subyacente de su contrato inteligente, sin alterar necesariamente el punto de entrada (dirección del contrato) de su dApp. Esto se hace separando sus contratos en un Proxy y una implementación. El Proxy sirve como punto de entrada y también contiene el almacenamiento del contrato, mientras que la Implementación contiene el código/lógica de su dApp. Para una inmersión más profunda, consulte este artículo de David Baretto [aquí](https://medium.com/starknet-edu/creating-upgradable-smart-contracts-on-starknet-12b7d9bd60c7)
+En términos simples, un contrato actualizable es aquel que le permite cambiar el código/lógica subyacente de su contrato inteligente, sin alterar necesariamente el punto de entrada (dirección del contrato) de su dApp. Esto se hace separando sus contratos en un Proxy y una implementación. El Proxy sirve como punto de entrada y también contiene el almacenamiento del contrato, mientras que la Implementación contiene el código/lógica de su dApp. 
+
+**Para una inmersión más profunda, consulte este artículo de [David Baretto aquí](https://medium.com/starknet-edu/creating-upgradable-smart-contracts-on-starknet-12b7d9bd60c7)**
 
 Gracias al equipo de Openzeppelin, ya tenemos una buena plantilla a seguir. Primero, necesitamos copiar el [contrato de proxy](https://github.com/OpenZeppelin/cairo-contracts/blob/main/src/openzeppelin/upgrades/presets/Proxy.cairo), en nuestro repositorio. Este contrato de proxy contiene algunas funciones importantes que debemos comprender:
 
@@ -88,7 +90,7 @@ Ahora pasaremos hacer los `declare` pero vamos guardando los Class Hash que qued
 
 ---
 
-## Declare 
+## Declare y Deploy 
 
 Revisar que la cuenta esté exportada y vamos a pasar los 3 comandos para el declare de cada uno de los contratos.
 
