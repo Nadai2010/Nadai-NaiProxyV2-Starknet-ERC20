@@ -132,3 +132,10 @@ Y ahora después de que se confirme la transacción de nuestra actualización de
 
 ![Graph](/im%C3%A1genes/v2.png)
 
+## Conclusión
+
+La creación de un contrato inteligente actualizable en StarkNet requiere dos contratos inteligentes, la implementación y el proxy. El proceso de implementación requiere múltiples pasos que, aunque es posible hacerlos todos usando la CLI de StarkNet, se recomienda automatizarlos usando un SDK como starknet.py o starknet.js.
+
+El syscall library_call permite que el Proxy use el código de Implementación mientras usa el almacenamiento del Proxy para cualquier variable involucrada. Esto significa que la Implementación se puede cambiar sin afectar el estado interno del contrato inteligente. En otras palabras, sin cambiar el valor de ninguna de las variables de almacenamiento.
+
+Incluso si no es fanático de los contratos inteligentes actualizables, deberá usar este patrón de diseño para permitir una transición sin problemas de su dapp durante Regenesis. La capacidad de actualización se puede eliminar de forma permanente en cualquier momento, ya sea durante la transición de Cairo 1.0 o configurando la dirección 0 como administrador proxy para que nadie pueda llamar a la función de actualización nunca más.
