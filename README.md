@@ -58,7 +58,7 @@ En esta nueva version de protostar `0.9.0` tendremos que crear un perfil que añ
  
  #### OPCIÓN A - EXPORT PRIVATE KEY
  
- Luego pasaremos el `hexa` convertido de nuestra private key para exportarla usando el siguiente comando. (SUSITITUIR 0x1234 por vuestro hexa).
+ Con esta opción pasaremos el `hexa` convertido de nuestra private key para exportarla, usando el siguiente comando. (SUSITITUIR 0x1234 por vuestro hexa).
 
 ```bash
 export PROTOSTAR_ACCOUNT_PRIVATE_KEY=0x1234
@@ -66,14 +66,14 @@ export PROTOSTAR_ACCOUNT_PRIVATE_KEY=0x1234
 
 #### OPCIÓN B - .ENV PRIVATE KEY
 
-Un método es añadir en un archivo `.env` nuestra private key. También tendremos que ajustar el [protostar.toml](/protostar.toml) para indicar la ruta de nuestra Private Key. Nunca mostrar tu clave privada. Nunca subir a Git tu archivo `.env`.
+Otra opción es este método, añadimos en un archivo `.env` nuestra private key. También tendremos que ajustar el [protostar.toml](/protostar.toml) para indicar la ruta de nuestra Private Key, aunque prefiero esta opción. Nunca mostrar tu clave privada. Nunca subir a Git tu archivo `.env`.
 
 ![Graph](/im%C3%A1genes/ruta.png)
 
 
-### BONUS: Deploy en testnet2
+### BONUS: Deploy en Testnet2
 
-Si queremos realizar el deploy de nuestro contrato en la testnet 2, debemos seguir los mismos pasos que en la testnet. La única diferencia es que necesitaremos utilizar una wallet que esté en la testnet 2 y agregar un perfil específico al archivo de configuración de Protostar. Además, cuando ejecutemos los comandos de Protostar, debemos utilizar el parámetro `-p testnet2`en lugar de `-p testnet` para que la configuración se aplique a la testnet 2. Con estos pasos, podremos realizar el deploy de nuestro contrato en la testnet 2 de manera efectiva.
+Si queremos realizar el deploy de nuestro contrato en la testnet 2, debemos seguir los mismos pasos que en la testnet. La única diferencia es que necesitaremos utilizar una wallet que esté en la testnet 2 y agregar un perfil específico al archivo de configuración de Protostar. Además, cuando ejecutemos los comandos de Protostar, debemos utilizar el parámetro `-p testnet2` en lugar de `-p testnet` para que la configuración se aplique a la testnet 2. Con estos pasos, podremos realizar el deploy de nuestro contrato en la testnet 2 de manera efectiva.
 
 ![Graph](/im%C3%A1genes/testnet2.png)
 
